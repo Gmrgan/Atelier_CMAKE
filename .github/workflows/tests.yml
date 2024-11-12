@@ -91,16 +91,16 @@ jobs:
           ./src/calculator sq 5
           
   Deployment:
-      runs-on: ubuntu-latest
-      needs: Test_Sq
-      steps:
-        - name: Deployment
-          run: |
-            last_directory=$(basename ${{ runner.workspace }})
-            git clone https://github.com/${{ github.repository }}.git
-            cd ./$last_directory
-            mkdir build
-            cd build
-            cmake ..
-            make
-            make test
+    runs-on: ubuntu-latest
+    needs: 
+      - Test_Add
+      - Test_Sub
+      - Test_Mul
+      - Test_Div
+      - Test_Sq
+    steps:
+      - name: Deployment
+        run: |
+          last_directory=$(basename ${{ runner.workspace }})
+          cd ./$last_directory/build
+          make test
