@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
 		r = _div(atof(a), atof(b));
 		printf("%lf",r);
 	}
-	else if (strcmp(op), "sq") == 0) {
+	else if (strcmp(op, "sq") == 0) {
 		r = _sq(atof(a));
 		printf("%lf", r);
 	}
