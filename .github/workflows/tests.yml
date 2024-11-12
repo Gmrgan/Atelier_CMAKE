@@ -102,9 +102,5 @@ jobs:
       - name: Deployment
         run: |
           echo "Starting deployment"
-          last_directory=$(basename ${{ runner.workspace }})
-          cd ./$last_directory
-          mkdir build
-          cd build
           echo "Deployment complete"
           
